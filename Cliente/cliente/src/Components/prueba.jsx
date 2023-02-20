@@ -1,23 +1,28 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export  function prueba() {
-  const[data, setData] = useState(null);
+function User() {
+  const [username, setUser] = useState(null);
 
   useEffect(() => {
-    fetch('/api')
-        .then(response => response.json())
-        .then(data => setData(data));
+    axios.get('http://127.0.0.1:8000/api/user/')
+      .then(response => {
+        setUser(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
-  if (!data) {
-    return <div>Cargando...</div>;
+  if (User) {
+    return (
+      <div>
+        <p>Username: {User.username}</p>
+      </div>
+    );
+  } else {
+    return <p>Loading...</p>;
   }
-
-  return (
-    <div>
-      <h1>puta el weon ordinario</h1>
-    </div>
-  )
 }
 
-export default prueba;
+export default User;

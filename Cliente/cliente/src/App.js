@@ -1,11 +1,11 @@
 import './App.css';
-import DataDisplay from './Components/prueba';
+import User from './Components/prueba';
 
 function App() {
   return (
     <div className="App">
       <h1>Conexion</h1>
-      <DataDisplay/>
+      <User/>
     </div>
   );
 }
