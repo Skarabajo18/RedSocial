@@ -1,30 +1,25 @@
-import Form from './Components/Registro';
-import Navbar from './Components/navbar';
-import Carousel from './Components/carousel';
-import Card  from './Components/card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Carousel/>
-      <Container>
-      <Row>
-      <Col xs={6} md={4}>
-        <Form/>
-      </Col>
-      </Row>
-      </Container>
-      
-      <Container>
-      <Card/><p></p><Card/>
-      </Container>
-      
-      
-    </div>
+    <Router>
+      <div className="container">
+          <hr/>
+        <Routes>
+        <Route path="/" element={<h1>pagina de inicio </h1>}/>
+        <Route path="/contacto2" element={<h1>pagina de contacto2</h1>}/>
+        <Route path="/contacto3" element={<h1>pagina de contacto3</h1>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
