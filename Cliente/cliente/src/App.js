@@ -3,10 +3,15 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  
 } from "react-router-dom";
-
 import Navbar  from './components/Navbar';
+import BasicExample from './components/login';
+import Card from "./components/Card";
+import Container from "react-bootstrap/esm/Container";
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+
+
 
 
 function App() {
@@ -16,9 +21,24 @@ function App() {
       <div className="container">
           <hr/>
         <Routes>
-        <Route path="/" element={<h1>pagina de inicio </h1>}/>
+        <Route path="/" element={
+          <Container>
+            <Row>
+              <Col xs={12} md={8}>
+                <Card/> 
+                <br></br>
+                <Card/>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6} md={4}>
+                <Card/>
+              </Col>
+            </Row>
+          </Container>
+        }/>
         <Route path="/admin" element={<h1>Admin</h1>}/>
-        <Route path="/login" element={<h1>login</h1>}/>
+        <Route path="/login" element={<BasicExample/>}/>
         </Routes>
       </div>
     </Router>
